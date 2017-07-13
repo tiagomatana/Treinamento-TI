@@ -61,3 +61,6 @@ git reset --soft --mixed --hard</br>
 Example:</br>
 git reset --soft adeda0d78ae97d8a </br>
 
+#BRANCH</br>
+=======
+git checkout -b teste</br>
