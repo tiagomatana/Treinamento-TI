@@ -28,7 +28,7 @@ git add README.md</br>
 
 #commitar arquivos do staged</br>
 ============================
-git commit -m "message for log"</br>
+git commit -am "message for log"</br>
 
 #consultar commits</br>
 ==================
@@ -41,3 +41,23 @@ git remote add origin git@github.com:tiagomatana/Treinamento-TI.git</br>
 #enviar os arquivos do repositorio local para o remoto</br>
 ======================================================
 git push -u origin master</br>
+
+##DESFAZER</br>
+----------
+git diff
+
+###untracked</br>
+------------
+git checkout README.md</br>
+
+###staged</br>
+---------
+git reset HEAD README.md</br>
+
+###MATAR COMMITS</br>
+----------------
+git reset --soft --mixed --hard</br>
+
+Example:</br>
+git reset --soft adeda0d78ae97d8a </br>
+
