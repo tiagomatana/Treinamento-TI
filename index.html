@@ -1,62 +1,64 @@
-<style>
-body {
-	background: tomato;
-  font-family: Arial;
- 
-}
+<html lang="en" >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body ng-app="BlankApp" ng-cloak layout="column">
+  <!--
+    Your HTML content here
+  -->
+		<md-toolbar class="md-hue-2">
+		      <div class="md-toolbar-tools">
+		        <md-button class="md-icon-button" aria-label="Settings">
+		           <md-icon md-font-icon="menu" style="color: white;">menu</md-icon>
+		        </md-button>
 
-.contenedor {
-	
-	display: flex;
-	width: 300px;
-	height: 42px;
-	color: #fff;
-	font-size: 40px;
-	line-height: 40px;
-	
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	margin: auto;
-	overflow: hidden;
-	
-}
+		        <h2 flex>Tiago Matana Development</h2>
 
-ul {
-	list-style: none;
-	padding-left: 10px;
-	animation: cambiar 7s infinite;
-}
 
-ul, p {
-	margin: 0;
-}
 
-@keyframes cambiar {
-	
-	0%{ margin-top: 0;}
-	20%{ margin-top: 0;}
-	
-	25% {margin-top: -40px;}
-	50% {margin-top: -40px;}
-	
-	55% {margin-top: -80px;}
-	80% {margin-top: -80px;}
-	
-	85% {margin-top: -40px;}
-	95% {margin-top: -40px;}
-	
-	100% {margin-top: 0;}
-}
-</style>
+		        <md-button class="md-icon-button" aria-label="More">
+		          <md-icon md-font-icon="more_vert">more_vert</md-icon>
+		        </md-button>
+		      </div>
+		    </md-toolbar>
 
-<div class="contenedor">
-			  <p>Olá</p>
-			    <ul>
-      <li>mundo</li>
-      <li>Usuário</li>
-			<li>Você</li>
-			    </ul>
-		</div>
+
+					<div layout-align="center center" layout="row" layout-xs="column" flex>
+
+							<div layout="column" layout-align="center center" layout-margin layout-padding>
+								<md-icon md-font-icon="android" style="color: greenyellow;font-size:56px">android</md-icon>
+								<span class="md-caption">Android</span>
+							</div>
+							<div layout="column" layout-align="center center" layout-margin layout-padding>
+								<md-icon md-font-icon="web" style="color: black;font-size:56px">web</md-icon>
+								<span class="md-caption">Web</span>
+							</div>
+
+
+					</div>
+
+
+	</md-content>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <script type="text/javascript">
+    /**
+     * You must include the dependency on 'ngMaterial'
+     */
+    angular.module('BlankApp', ['ngMaterial']);
+  </script>
+
+</body>
+</html>
