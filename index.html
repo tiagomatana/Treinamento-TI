@@ -1,4 +1,4 @@
-<html lang="en" >
+<html lang="en" ng-app="BlankApp" ng-cloak>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Angular Material style sheet -->
@@ -6,43 +6,41 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 </head>
-<body ng-app="BlankApp" ng-cloak layout="column">
+<body layout="column" ng-controller="Controller" flex>
   <!--
     Your HTML content here
   -->
-		<md-toolbar class="md-hue-2">
-		      <div class="md-toolbar-tools">
-		        <md-button class="md-icon-button" aria-label="Settings">
-		           <md-icon md-font-icon="menu" style="color: white;">menu</md-icon>
-		        </md-button>
 
-		        <h2 flex>Tiago Matana Development</h2>
+		<md-toolbar md-scroll-shrink ng-if="true">
+      <div class="md-toolbar-tools">
+          <h2 flex ng-bind="title"></h2>
+      </div>
+    </md-toolbar>
+		<md-content flex>
+			<div layout="column" layout-xs="column" flex>
 
+				<span flex></span>
 
+						<div ng-repeat="git in gits" layout-align="center center" layout="row" layout-margin>
+							<md-card class="md-whiteframe-12dp" flex="80">
+								<md-card-content>
+									<md-card-title>
+										<md-card-title-text layout-align="center center">
+											<span class="md-headline">{{git.describe}}</span>
+											<span class="md-subhead">{{git.command}}</span>
+										</md-card-title-text>
+									</md-card-title>
+								</md-card-content>
+							</md-card>
+						</div>
 
-		        <md-button class="md-icon-button" aria-label="More">
-		          <md-icon md-font-icon="more_vert">more_vert</md-icon>
-		        </md-button>
-		      </div>
-		    </md-toolbar>
+						<span flex></span>
 
-
-					<div layout-align="center center" layout="row" layout-xs="column" flex>
-
-							<div layout="column" layout-align="center center" layout-margin layout-padding>
-								<md-icon md-font-icon="android" style="color: greenyellow;font-size:56px">android</md-icon>
-								<span class="md-caption">Android</span>
-							</div>
-							<div layout="column" layout-align="center center" layout-margin layout-padding>
-								<md-icon md-font-icon="web" style="color: black;font-size:56px">web</md-icon>
-								<span class="md-caption">Web</span>
-							</div>
-
-
-					</div>
+				</div>
+			</md-content>
 
 
-	</md-content>
+
   <!-- Angular Material requires Angular.js Libraries -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -57,7 +55,21 @@
     /**
      * You must include the dependency on 'ngMaterial'
      */
-    angular.module('BlankApp', ['ngMaterial']);
+    var app = angular.module('BlankApp', ['ngMaterial']);
+		app.controller('Controller',['$scope',
+			function($scope) {
+				$scope.title = 'Tiago Matana Development';
+				$scope.gits = [
+					{command:'git config user.name "nome"',describe:'Configurar nome do usuário'},
+					{command:'git config user.email "email@email.com"',describe:'Configurar o email do usuário'},
+					{command:'git init',describe:'Iniciar um novo repositório'},
+					{command:'git status',describe:'Verificar os stage dos arquivos'},
+					{command:'git add .',describe:'Adiciona todos os arquivos para commit'},
+					{command:'git add index.html',describe:'Adiciona apenas o arquivo descrito para commit'},
+					{command:'git commit -m "Mensagem descrevendo as mudanças"',describe:'Salvar as mudanças adicionadas criando uma versão'},
+					{command:'git log',describe:'Visualiza todos os commits realizados'},
+				]
+			}])
   </script>
 
 </body>
